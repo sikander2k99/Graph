@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int waysToSplitArray(vector<int>& nums) {
+        long long n = nums.size();
+         long long count = 0;
+         long long pilu = 0 ;
+         for(int i = 0 ; i < n; i++){
+            pilu += nums[i];
+         }
+           long sum1 = 0;
+        for(int j = 0 ; j < n-1 ; j++){
+             sum1 += nums[j];
+            long long sum2 = pilu -sum1;
+            if(sum1>= sum2){
+                count++;
+            }
+        }
+        return count;
+    }
+};
